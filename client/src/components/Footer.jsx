@@ -20,34 +20,34 @@ export default function FooterCom() {
                 <Footer.Title title='About' />
                 <Footer.LinkGroup col>
                     <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'> 
-                        Szymons blog
+                        This Project
                     </Footer.Link>
                     <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
-                        Shhmon.com
-                    </Footer.Link>
-                </Footer.LinkGroup>
-            </div>
-
-            <div className='mt-3'>
-                <Footer.Title title='Follow Us' />
-                <Footer.LinkGroup col>
-                    <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
-                        Github
-                    </Footer.Link>
-                    <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
-                        Shhmon.com
+                        Source Code
                     </Footer.Link>
                 </Footer.LinkGroup>
             </div>
 
             <div className='mt-3'>
-                <Footer.Title title='Follow Us' />
+                <Footer.Title title='Follow Me' />
                 <Footer.LinkGroup col>
+                    <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
+                        Shhmon.com
+                    </Footer.Link>
                     <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
                         Github
                     </Footer.Link>
+                </Footer.LinkGroup>
+            </div>
+
+            <div className='mt-3'>
+                <Footer.Title title='See Also' />
+                <Footer.LinkGroup col>
                     <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
-                        Shhmon.com
+                        Bloom
+                    </Footer.Link>
+                    <Footer.Link href='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'>
+                        Public Blog
                     </Footer.Link>
                 </Footer.LinkGroup>
             </div>
