@@ -48,7 +48,7 @@ export default function SignUp() {
 
   return (
     <div className='min-h-screen mt-20'>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center sm:gap-10 md:gap-20'>
+      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-20'>
         {/* left side */}
         <div className='flex-1'>
           <Link to="/" className='font-bold dark:text-white text-4xl'>
@@ -76,7 +76,7 @@ export default function SignUp() {
             </div>
             <div className=''>
               <Label value='Your passsword' />
-              <TextInput type='password' placeholder='Password' id='password' onChange={handleChange} />
+              <TextInput type='password' placeholder='********' id='password' onChange={handleChange} />
             </div>
             <Button gradientDuoTone='purpleToPink' type='submit' disabled={loading}>
               { loading ? (
