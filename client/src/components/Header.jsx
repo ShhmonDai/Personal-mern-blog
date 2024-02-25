@@ -41,7 +41,7 @@ const customNavTheme = {
       "base": "block py-2 pr-4 pl-3 md:p-0",
       "active": {
         "on": "bg-blue-400 dark:bg-blue-500 text-gray-900 dark:text-white md:text-blue-400 md:bg-transparent dark:md:bg-transparent md:dark:text-blue-400",
-        "off": "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+        "off": "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-300"
     },
       "disabled": {
         "on": "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
@@ -90,7 +90,7 @@ export default function Header() {
         </Button>
 
         {currentUser ? (
-            <Dropdown arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" boredered color="red" rounded />}>
+            <Dropdown arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" bordered color="light" rounded />}>
             <Dropdown.Header>
               <span className='block text-sm'>@{currentUser.username}</span>
               <span className='block text-sm font-medium truncate'>
