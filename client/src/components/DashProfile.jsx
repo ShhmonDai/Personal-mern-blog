@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
-import { CircularProgressbar, CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 
@@ -23,13 +23,15 @@ export default function DashProfile() {
         }
     };
 
-useEffect(() => {
-    if (imageFile) {
-        uploadImage();
-    }
-}, [imageFile]);
+    useEffect(() => {
+        if (imageFile) {
+            uploadImage();
+        }
+    }, [imageFile]);
+
 
     const uploadImage = async () => {
+        
         setImageFileUploadError(null);
         const storage = getStorage(app);
         const fileName = new Date().getTime() + imageFile.name;
@@ -65,7 +67,7 @@ useEffect(() => {
             {imageFileUploadProgress && (
                 <CircularProgressbar value={imageFileUploadProgress || 0} text={
                 `${imageFileUploadProgress}%`} 
-                strokeWidth={6}
+                strokeWidth={4}
                 styles={{
                     root:{
                         width: '100%',
@@ -80,7 +82,7 @@ useEffect(() => {
                     },
                     text: {
                         fill: '#3b82f6',
-                        fontSize: '16px',
+                        fontSize: '22px',
                     },
                 }}
                 />

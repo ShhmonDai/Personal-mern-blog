@@ -11,7 +11,7 @@ const customTheme = {
             "on": "w-16",
             "off": "w-64"
         },
-        "inner": "h-full overflow-y-auto overflow-x-hidden border-r-2 dark:border-gray-700 bg-gray-50 py-4 px-3 dark:bg-transparent transition-colors duration-500"
+        "inner": "h-full overflow-y-auto overflow-x-hidden border-r-2 bg-[rgba(0,0,0,0.1)] dark:border-gray-700 py-4 px-3 backdrop-blur dark:bg-[rgba(0,0,0,0.1)] transition-colors duration-500"
     },
     }
 };

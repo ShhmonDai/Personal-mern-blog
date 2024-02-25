@@ -66,7 +66,7 @@ export default function Header() {
 
   return (
     <Flowbite theme={{ theme: customNavTheme }}>
-    <Navbar className='border-b-2 sticky top-0 z-40 backdrop-blur transition-colors duration-500 bg-transparent dark:bg-transparent'>
+      <Navbar className='border-b-2 sticky top-0 z-40 backdrop-blur transition-colors duration-500 bg-[rgba(20,31,25,0.05)] dark:bg-[rgba(0,0,0,0.1)]'>
       <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
         <span className='px-2 py-1 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-lg text-white'>Szymons</span>
         Blog
@@ -90,7 +90,7 @@ export default function Header() {
         </Button>
 
         {currentUser ? (
-          <Dropdown arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} rounded/>}>
+            <Dropdown arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" boredered color="red" rounded />}>
             <Dropdown.Header>
               <span className='block text-sm'>@{currentUser.username}</span>
               <span className='block text-sm font-medium truncate'>
