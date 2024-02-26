@@ -11,6 +11,7 @@ export default function SignUp() {
   const navigate = useNavigate();
 
 
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim()});
   };
@@ -49,6 +50,7 @@ export default function SignUp() {
 
   return (
     <div className='min-h-screen mt-20'>
+ 
       <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-20'>
         {/* left side */}
         <div className='flex-1'>
@@ -98,7 +100,7 @@ export default function SignUp() {
           </div>
           {
             errorMessage && (
-              <Alert className='mt-5' color='failure'>
+              <Alert className='mt-5' color='failure' onDismiss={() => setErrorMessage(null)}>
                 {errorMessage}
               </Alert>
             )

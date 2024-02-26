@@ -12,6 +12,9 @@ export default function SignIn() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const clearAlert = () => {
+    dispatch(signInFailure(null));
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -48,8 +51,10 @@ export default function SignIn() {
     }
   };
 
+ 
   return (
     <div className='min-h-screen mt-20'>
+
       <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-20'>
         {/* left side */}
         <div className='flex-1'>
@@ -95,7 +100,7 @@ export default function SignIn() {
             </Link>
           </div>
           { errorMessage && (
-              <Alert className='mt-5' color='failure'>
+            <Alert className='mt-5' color='failure' onDismiss={() => clearAlert()}>
                 {errorMessage}
               </Alert>
             )
@@ -104,5 +109,6 @@ export default function SignIn() {
 
       </div>
     </div>
+  
   )
 }
