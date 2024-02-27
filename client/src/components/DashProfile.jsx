@@ -170,7 +170,7 @@ const customModalTheme = {
                 "light": ""
             },
             "off": "",
-            "on": "flex justify-center bg-white text-gray-900 transition-all duration-75 ease-in group-enabled:group-hover:bg-[rgba(0,0,0,0)] group-enabled:group-hover:text-inherit dark:bg-[rgba(0,0,0,0.7)] dark:text-white w-full",
+            "on": "flex justify-center bg-white text-gray-900 transition-all duration-75 ease-in group-enabled:group-hover:bg-[rgba(0,0,0,0)] group-enabled:group-hover:text-inherit dark:bg-[rgba(31,41,55,0.9)] dark:text-white w-full",
             "pill": {
                 "off": "rounded-md",
                 "on": "rounded-full"
@@ -365,7 +365,7 @@ export default function DashProfile() {
             <TextInput color='gray' type='text' id='username' placeholder='username' defaultValue={currentUser.username} onChange={handleChange} />
             <TextInput type='email' id='email' placeholder='email' defaultValue={currentUser.email} onChange={handleChange}/>
             <TextInput type='password' id='password' placeholder='password' autoComplete='password' onChange={handleChange}/>
-                  <Button type='submit' gradientDuoTone="skyToBlue" outline>
+                  <Button type='submit' gradientDuoTone="pinkToOrange" outline>
                 Update
             </Button>
         </Flowbite>
