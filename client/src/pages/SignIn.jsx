@@ -9,11 +9,12 @@ export default function SignIn() {
 
   const [formData, setFormData] = useState({});
   const {loading, error: errorMessage} = useSelector(state => state.user);
+  const [errorMessageAlert, setErrorMessageAlert] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const clearAlert = () => {
-    dispatch(signInFailure(null));
+    setErrorMessageAlert(null);
   };
 
   const handleChange = (e) => {
@@ -24,10 +25,11 @@ export default function SignIn() {
     e.preventDefault();
 
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure('Please fill all the fields'));
+      return setErrorMessageAlert('Please fill all the fields');
     }
 
     try {
+      setErrorMessageAlert(null);
       dispatch(signInStart());
       const res = await fetch('/api/auth/signin', {
         method: 'POST',
@@ -37,6 +39,7 @@ export default function SignIn() {
 
       const data = await res.json();
       if (data.success === false) {
+        setErrorMessageAlert(data.message);
         dispatch(signInFailure(data.message));
       }
 
@@ -47,6 +50,7 @@ export default function SignIn() {
       }
 
     } catch (error) {
+      setErrorMessageAlert(error.message);
       dispatch(signInFailure(error.message));
     }
   };
@@ -99,9 +103,9 @@ export default function SignIn() {
               Sign Up
             </Link>
           </div>
-          { errorMessage && (
+          { errorMessageAlert && (
             <Alert className='mt-5' color='failure' onDismiss={() => clearAlert()}>
-                {errorMessage}
+                {errorMessageAlert}
               </Alert>
             )
           }
