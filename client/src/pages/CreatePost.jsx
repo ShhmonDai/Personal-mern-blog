@@ -9,7 +9,20 @@ import 'react-circular-progressbar/dist/styles.css';
 
 import { useNavigate } from 'react-router-dom';
 
+
+
+
 export default function CreatePost() {
+
+  const modules = {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+      ['link', 'image'],
+      ['clean']
+    ],
+  };
 
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
@@ -112,15 +125,27 @@ export default function CreatePost() {
           </Alert>
         }
 
+        {/* 
         {formData.image && (
           <img src={formData.image} alt='upload' className='w-full h-72 object-cover'/>
         )}
+        */}
 
-      <ReactQuill theme="snow" placeholder="Write something..." className='h-72 mb-12' required onChange={(value) => {setFormData({ ...formData, content: value });}} />
+      <ReactQuill modules={modules} theme="snow" placeholder="Write something..." className='h-72 mb-12' required onChange={(value) => {setFormData({ ...formData, content: value });}} />
         <Button type='submit' gradientDuoTone='skyToBlue' > Publish </Button>
 
       { publishError && <Alert className='mt-5' color='failure'>{publishError}</Alert> }
 
     </form>
+    
+    <h1 className='mt-10 mb-7 text-center text-3xl font-semibold'>Preview:</h1>
+    <div className='p-10 border dark:border-slate-800 dark:bg-black dark:bg-opacity-20 min-h-80'>  
+    {formData.image && (
+      <img src={formData.image} alt='upload' className='mb-5 w-full h-72 object-fit' />
+      )}
+    <div className='text-center text-xl font-semibold' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
+    <div className='mt-5' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
+    </div>
+
   </div>
 }
