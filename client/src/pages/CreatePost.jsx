@@ -94,7 +94,7 @@ export default function CreatePost() {
     }
   }
 
-  return <div className='p-3 max-w-3xl mx-auto min-h-screen'>
+  return <div className='p-3 max-w-5xl mx-auto min-h-screen'>
     <h1 className='text-center text-3xl my-7 font-semibold'>Create a post</h1>
     <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-4 sm:flex-row justify-between'>
@@ -144,7 +144,7 @@ export default function CreatePost() {
       <img src={formData.image} alt='upload' className='mb-5 w-full h-72 object-fit' />
       )}
     <div className='text-center text-xl font-semibold' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
-    <div className='mt-5' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
+    <div className='mt-5 break-all' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
     </div>
 
   </div>

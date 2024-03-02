@@ -25,3 +25,54 @@ export const create = async (req, res, next) => {
         next(error);
     }
 };
+
+export const getposts = async (req, res, next) => {
+    try {
+        const startIndex = parseInt(req.query.startIndex) || 0;
+        const limit = parseInt(req.query.limit) || 9;
+        const sortDirection = req.query.order === 'asc' ? 1 : -1;
+        const posts = await Post.find({
+            ...(req.query.userId && { userId: req.query.userId }),
+            ...(req.query.category && { category: req.query.category }),
+            ...(req.query.slug && { slug: req.query.slug }),
+            ...(req.query.postId && { _id: req.query.postId }),
+            ...(req.query.searchTerm && { 
+                $or:[
+                    { title: { $regex: req.query.searchTerm, $options: 'i' } },
+                    { content: { $regex: req.query.searchTerm, $options: 'i' } },
+                ],
+            }),
+        }).sort({ updatedAt: sortDirection }).skip(startIndex).limit(limit);    
+        {/* $options 'i' = uppercase/lowercase is not important, get both results */}
+        
+        {/* Full number of posts in database */}
+        const totalPosts = await Post.countDocuments();
+        
+        {/* Current date */}
+        const now = new Date();
+
+        {/* Get date of 1 month ago  */}
+        const oneMonthAgo = new Date(
+            now.getFullYear(),
+            now.getMonth() - 1,
+            now.getDate()
+        );
+
+        {/* Number of posts created after 1 month ago
+        $gte = greater than.
+        Sorted by date of creation. Greater than date 1 month ago  */}
+        const lastMonthPosts = await Post.countDocuments({
+            createdAt: { $gte: oneMonthAgo },
+        });
+
+        res.status(200).json({
+            posts,
+            totalPosts,
+            lastMonthPosts,
+            now,
+            oneMonthAgo
+        });
+    } catch (error) {
+        next(error);
+    }
+}
