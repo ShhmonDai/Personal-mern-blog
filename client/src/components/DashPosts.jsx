@@ -10,7 +10,7 @@ const customModalTheme = {
     "root": {
       "base": "fixed top-0 right-0 left-0 z-50 h-modal h-screen overflow-y-auto overflow-x-hidden md:inset-0 md:h-full",
       "show": {
-        "on": "flex bg-gray-900 bg-opacity-50 dark:bg-opacity-80",
+        "on": "flex bg-gray-900 bg-opacity-50 dark:bg-opacity-80 backdrop-blur",
         "off": "hidden"
       },
       "sizes": {
@@ -192,17 +192,17 @@ export default function DashPosts() {
       ) : (
         <p> You have no posts yet!</p>
       )}
-      <Modal dismissible show={showModal} onClose={() => setShowModal(false)} popup size='md' className='bg-[rgba(0,0,0,0.4)]'>
+      <Modal dismissible show={showModal} onClose={() => setShowModal(false)} popup size='md' >
 
         <Modal.Header className='bg-[rgba(0,0,0,0.3)]' />
         <Modal.Body className='bg-[rgba(0,0,0,0.3)]'>
           <div className='text-center'>
             <HiOutlineExclamationCircle className='h-14 w-14 text-red-800 dark:text-red-700 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-white dark:text-white'>
-              Are you sure you want to delete your account?
+              Are you sure you want to delete this post?
             </h3>
             <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick='' >
+              <Button color='failure' onClick={handleDeletePost} >
                 Yes, Im sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>

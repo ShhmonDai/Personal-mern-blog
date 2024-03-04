@@ -1,4 +1,4 @@
-import { Alert, Button, Flowbite, Modal, ModalBody, TextInput } from 'flowbite-react';
+import { Alert, Button, Flowbite, Modal, TextInput } from 'flowbite-react';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
@@ -23,7 +23,7 @@ const customModalTheme = {
         "root": {
             "base": "fixed top-0 right-0 left-0 z-50 h-modal h-screen overflow-y-auto overflow-x-hidden md:inset-0 md:h-full",
             "show": {
-                "on": "flex bg-gray-900 bg-opacity-50 dark:bg-opacity-80",
+                "on": "flex bg-gray-900 bg-opacity-40 dark:bg-opacity-80 backdrop-blur",
                 "off": "hidden"
             },
             "sizes": {
@@ -170,7 +170,7 @@ const customModalTheme = {
                 "light": ""
             },
             "off": "",
-            "on": "flex justify-center bg-white text-gray-900 transition-all duration-75 ease-in group-enabled:group-hover:bg-[rgba(0,0,0,0)] group-enabled:group-hover:text-inherit dark:bg-[rgba(31,41,55,0.9)] dark:text-white w-full",
+            "on": "flex justify-center bg-white text-gray-900 transition-all duration-200 ease-in group-enabled:group-hover:bg-[rgba(0,0,0,0)] group-enabled:group-hover:text-inherit dark:bg-[rgba(31,41,55,0.9)] dark:text-white w-full",
             "pill": {
                 "off": "rounded-md",
                 "on": "rounded-full"
@@ -393,7 +393,7 @@ export default function DashProfile() {
         </Alert>)}
 
           <Flowbite theme={{ theme: customModalTheme }}>
-          <Modal dismissible show={showModal} onClose={() => setShowModal(false)} popup size='md' className='bg-[rgba(0,0,0,0.4)]'>
+          <Modal dismissible show={showModal} onClose={() => setShowModal(false)} popup size='md' >
 
                   <Modal.Header className='bg-[rgba(0,0,0,0.3)]' />
                   <Modal.Body className='bg-[rgba(0,0,0,0.3)]'>
