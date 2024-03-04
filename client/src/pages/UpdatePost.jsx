@@ -7,7 +7,7 @@ import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 
@@ -165,13 +165,22 @@ export default function UpdatePost() {
         </form>
 
         <h1 className='mt-10 mb-7 text-center text-3xl font-semibold'>Preview:</h1>
-        <div className='p-10 border dark:border-slate-800 dark:bg-black dark:bg-opacity-20 min-h-80'>
+        <div className='flex flex-col p-10 border dark:border-slate-800 dark:bg-black dark:bg-opacity-20 min-h-80'>
+            <div className='text-3xl my-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
+            <Link to={`search?category=${formData && formData.category}`} className='self-center mt-5' >
+                <Button color='gray' pill size='xs'> {formData && formData.category} </Button>
+            </Link>
             {formData.image && (
-                <img src={formData.image} alt='upload' className='mb-5 w-full h-72 object-fit' />
+                <img src={formData.image} alt='upload' className='mb-5 w-full max-h-[600px] object-fit' />
             )}
-            <div className='text-center text-xl font-semibold' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
-            <div className='mt-5 break-all' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
+
+            <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs' >
+                <span>{new Date().toLocaleDateString()}</span>
+                <span className='italic'>X mins read</span>
+            </div>
+            <div className='mt-10 break-all post-content' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
         </div>
+
 
     </div>
 }
