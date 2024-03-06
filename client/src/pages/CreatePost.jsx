@@ -141,11 +141,13 @@ export default function CreatePost() {
     <h1 className='mt-10 mb-7 text-center text-3xl font-semibold'>Preview:</h1>
     <div className='flex flex-col p-10 border dark:border-slate-800 dark:bg-black dark:bg-opacity-20 min-h-80'>  
     <div className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
-      <Link to={`search?category=${formData && formData.category}`} className='self-center mt-5' >
-        <Button color='gray' pill size='xs'> {formData && formData.category} </Button>
-      </Link>    
+      
+
+        <Button className='self-center my-5' color='gray' pill size='xs' onClick=''> {formData && formData.category} </Button>
+
+
     {formData.image && (
-        <img src={formData.image} alt='upload' className='mb-5 w-full max-h-[600px] object-fit' />
+        <img src={formData.image} alt='upload' className='mt-10 w-full max-h-[600px] object-fit' />
     )}
 
       <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs' >

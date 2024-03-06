@@ -40,7 +40,8 @@ export default function PostPage() {
         </div>
     );
   
-    return <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen' >
+    return (
+    <main className='p-6 flex flex-col max-w-7xl mx-auto min-h-screen dark:bg-black dark:bg-opacity-30' >
         <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl'>{post && post.title}</h1>
         <Link to={`search?category=${post && post.category}`} className='self-center mt-5' >
             <Button color='gray' pill size='xs'> {post && post.category} </Button>
@@ -52,10 +53,11 @@ export default function PostPage() {
             <span className='italic'>{post && (post.content.length / 1000).toFixed(0)} mins read</span>
         </div>
 
-        <div className='p-3 max-w-2xl mx-auto w-full post-content' dangerouslySetInnerHTML={{__html: post && post.content}}> 
+        <div className='p-3 max-w-4xl mx-auto w-full post-content break-all' dangerouslySetInnerHTML={{__html: post && post.content}}> 
         
         </div>
 
-    </main>;
+    </main>
+    );
   
 }
