@@ -7,15 +7,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signoutSuccess } from "../redux/user/userSlice";
 
 const customTheme = {
-    sidebar: { "root": {
+     "root": {
         "base": "h-full",
         "collapsed": {
             "on": "w-16",
             "off": "w-64"
         },
-        "inner": "h-full overflow-y-auto overflow-x-hidden border-r-2 bg-[rgba(0,0,0,0.1)] dark:border-gray-700 py-4 px-3 backdrop-blur dark:bg-[rgba(0,0,0,0.1)] transition-colors duration-500"
+        "inner": "h-full overflow-y-auto overflow-x-hidden border-r-2 bg-[rgba(0,0,0,0.1)] dark:border-gray-700 py-4 px-3 md:backdrop-blur dark:bg-[rgba(0,0,0,0.1)] transition-colors duration-500"
     },
-    }
 };
 
 
@@ -53,8 +52,8 @@ export default function DashSidebar() {
 
     
   return (
-    <Flowbite theme={{ theme: customTheme }}>
-      <Sidebar className='w-full md:w-56'>
+
+      <Sidebar theme={customTheme}className='w-full md:w-56'>
         <Sidebar.Items className=''>
             <Sidebar.ItemGroup className='flex flex-col gap-1'>
                 
@@ -88,6 +87,6 @@ export default function DashSidebar() {
             </Sidebar.ItemGroup>
         </Sidebar.Items>
     </Sidebar>
-    </Flowbite>
+
   );
 }

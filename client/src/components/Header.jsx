@@ -6,6 +6,8 @@ import { toggleTheme } from "../redux/theme/themeSlice";
 import { useDispatch, useSelector } from 'react-redux';
 import { signoutSuccess } from "../redux/user/userSlice";
 import { Flowbite } from 'flowbite-react';
+import { BsFacebook, BsInstagram, BsTwitter, BsGithub } from 'react-icons/bs';
+import { HiChevronDown, HiOutlineChevronDown, HiViewGrid } from 'react-icons/hi';
 
 
 const customNavTheme = {
@@ -21,7 +23,7 @@ const customNavTheme = {
         "off": ""
     },
       "inner": {
-        "base": "mx-auto flex flex-wrap items-center justify-between",
+        "base": "mx-auto flex-col sm:flex items-center",
         "fluid": {
           "on": "",
           "off": "container"
@@ -32,8 +34,8 @@ const customNavTheme = {
       "base": "flex items-center"
   },
     "collapse": {
-      "base": "w-full md:block md:w-auto",
-      "list": "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
+      "base": "w-full sm:block sm:w-auto sm:items-center",
+      "list": "mt-4 flex flex-col sm:mt-0 sm:flex-row sm:space-x-8 sm:text-sm sm:font-medium",
       "hidden": {
         "on": "hidden",
         "off": ""
@@ -42,8 +44,8 @@ const customNavTheme = {
     "link": {
       "base": "block py-2 pr-4 pl-3 md:p-0",
       "active": {
-        "on": "bg-blue-400 dark:bg-blue-500 text-gray-900 dark:text-white md:text-blue-400 md:bg-transparent dark:md:bg-transparent md:dark:text-blue-400",
-        "off": "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-300"
+        "on": "bg-blue-400 dark:bg-blue-500 text-gray-900 dark:text-white sm:text-blue-400 sm:bg-transparent dark:sm:bg-transparent sm:dark:text-blue-400",
+        "off": "border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-white sm:border-0 sm:hover:bg-transparent sm:hover:text-cyan-700 sm:dark:hover:bg-transparent sm:dark:hover:text-blue-300"
     },
       "disabled": {
         "on": "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
@@ -51,8 +53,8 @@ const customNavTheme = {
     }
     },
     "toggle": {
-      "base": "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden",
-      "icon": "h-6 w-6 shrink-0"
+      "base": "flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 sm:hidden",
+      "icon": "h-5 w-5 shrink-0"
   },
   
   }, 
@@ -192,8 +194,42 @@ const customNavTheme = {
       }
       }
     }
-  },
+  }, 
 };
+  
+  const customDropdown = {
+    "arrowIcon": "ml-2 h-4 w-4",
+    "content": "py-1 focus:outline-none",
+    "floating": {
+      "animation": "transition-opacity",
+      "arrow": {
+        "base": "absolute z-50 h-2 w-2 rotate-45",
+        "style": {
+          "dark": "bg-gray-900 dark:bg-gray-700",
+          "light": "bg-white",
+          "auto": "bg-white dark:bg-gray-700"
+      },
+        "placement": "-4px"
+    },
+      "base": "z-50 w-fit rounded divide-y divide-gray-100 shadow focus:outline-none",
+      "content": "py-1 text-sm text-gray-700 dark:text-gray-200",
+      "divider": "my-1 h-px bg-gray-100 dark:bg-gray-600",
+      "header": "block py-2 px-4 text-sm text-gray-700 dark:text-gray-200",
+      "hidden": "invisible opacity-0",
+      "item": {
+        "container": "",
+        "base": "flex items-center justify-start py-2 px-4 text-sm text-gray-700 cursor-pointer w-full hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 focus:outline-none dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white",
+        "icon": "mr-2 h-4 w-4"
+    },
+      "style": {
+        "dark": "bg-gray-900 text-white dark:bg-gray-700",
+        "light": "border border-gray-200 bg-white text-gray-900",
+        "auto": "border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-gray-700 dark:text-white"
+    },
+      "target": "w-fit"
+  },
+    "inlineWrapper": "flex items-center"
+ };
 
 
 
@@ -223,67 +259,131 @@ export default function Header() {
 
   return (
     <Flowbite theme={{ theme: customNavTheme }}>
-      <Navbar className='border-b-2 sticky top-0 z-40 backdrop-blur transition-all duration-500 bg-[rgba(20,31,25,0.05)] dark:bg-[rgba(0,0,0,0.1)]'>
-      <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
-        <span className='px-2 py-1 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-lg text-white'>Szymons</span>
-        Blog
-      </Link>
-      <form>
-        <TextInput
-          type='text'
-          placeholder='Search...'
-          rightIcon={AiOutlineSearch} 
-          className='hidden lg:inline'
-        />
-      </form>
 
-      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
-        <AiOutlineSearch />
-      </Button>
 
-      <div className='flex gap-2 md:order-2'>
-        <Button className='w-12 h-10 hidden sm:inline' color='gray' pill onClick={()=> dispatch(toggleTheme())}>
-          {theme === 'dark' ? <FaSun /> : <FaMoon />}
-        </Button>
+      <div className='w-full px-8 pt-8 pb-12 sm:pb-8 hidden sm:flex sm:text-center sm:justify-center dark:bg-[rgba(0,0,0,0.4)]'>
 
-        {currentUser ? (
-            <Dropdown arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" bordered color="light" rounded />}>
-            <Dropdown.Header>
-              <span className='block text-sm'>@{currentUser.username}</span>
-              <span className='block text-sm font-medium truncate'>
-                {currentUser.email}
-              </span>
-            </Dropdown.Header>
-            <Link to={'/dashboard?tab=profile'}>
-              <Dropdown.Item>Profile</Dropdown.Item>
-            </Link>
-            <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
-          </Dropdown>
-
-        ): 
-        (
-          <Link to='/sign-in'>
-              <Button gradientDuoTone="skyToBlue" outline pill>
-              Sign In
-            </Button>
-          </Link>
-        )
+        {/* left side */}
+        <div className='gap-4 hidden sm:flex sm:absolute left-8'>
+          <Link to='/' > <BsFacebook/> </Link>
+          <Link to='/' > <BsGithub /> </Link>
+          <Link to='/' > <BsTwitter /> </Link>
+          <Link to='/' > <BsInstagram /> </Link>
+        </div>
         
-      }
+        {/* middle */}
+        <div className='w-100 flex flex-col justify-start sm:justify-center sm:text-center'>
+          <span className='text-6xl sm:text-7xl md:text-8xl sm:text-center font-BrushFont'>Szymons</span>
+          <span className='hidden md:inline sm:text-center italic font-semibold'>Eclectic Anecdotes</span>
+        </div>
 
-        <Navbar.Toggle />
+        {/* right side */}
+        <div className='hidden sm:flex absolute right-8'>
+          <div className='flex items-start gap-2'>
+            {/* Toggle Theme Button */}
+            <Button className='w-12 h-10' color='gray' pill onClick={() => dispatch(toggleTheme())}>
+              {theme === 'dark' ? <FaSun /> : <FaMoon />}
+            </Button>
+
+            {/* Sign In or Profile Dropdown */}
+            {currentUser ? (
+              <Dropdown theme={customDropdown} arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" bordered color="light" rounded />}>
+                <Dropdown.Header>
+                  <span className='block text-sm'>@{currentUser.username}</span>
+                  <span className='block text-sm font-medium truncate'>
+                    {currentUser.email}
+                  </span>
+                </Dropdown.Header>
+                <Link to={'/dashboard?tab=profile'}>
+                  <Dropdown.Item>Profile</Dropdown.Item>
+                </Link>
+                <Dropdown.Divider />
+                <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+              </Dropdown>
+
+            ) :
+              (
+                <Link to='/sign-in'>
+                  <Button gradientDuoTone="skyToBlue" outline pill>
+                    Sign In
+                  </Button>
+                </Link>
+              )
+            }
+            {/* End of SignIn/Profile Dropdown */}
+
+          </div>  
+        </div>
+
       </div>
+
+
+      <Navbar className='border-y-[1px] h-16 sm:sticky top-0 z-10 backdrop-blur transition-all duration-500 bg-white dark:bg-[rgba(0,0,0,0.4)]'>
+      
+
+      {/* Navbar Elements */}
+      <div className='flex gap-6 justify-start'>  
+      <span className='text-3xl font-BrushFont sm:hidden'>Szymons</span>
+
+          <div className='flex gap-2 absolute right-5 '>
+
+          <div className='sm:hidden'>
+          {currentUser ? (
+            <Dropdown theme={customDropdown} arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} color="light" rounded />}>
+              <Dropdown.Header>
+                <span className='block text-sm'>@{currentUser.username}</span>
+                <span className='block text-sm font-medium truncate'>
+                  {currentUser.email}
+                </span>
+              </Dropdown.Header>
+              <Link to={'/dashboard?tab=profile'}>
+                <Dropdown.Item>Profile</Dropdown.Item>
+              </Link>
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            </Dropdown>
+
+            ) :
+            (
+            <Link to='/sign-in'>
+                <div className='pt-1.5 font-bold'>
+                  Sign In
+                </div>
+              </Link>
+            )
+          }
+          
+        </div>  
+          <Navbar.Toggle className='' />
+          
+          </div>  
+      
+
+      </div>
+
+
       <Navbar.Collapse>
           <Navbar.Link active={path === "/"} as={'div'}>
-            <Link to='/'> Home </Link>
+            <Link to='/'> HOME </Link>
           </Navbar.Link>
-        <Navbar.Link active={path === "/about"} as={'div'}>
-            <Link to='/about'> About </Link>
+        <Navbar.Link active={path === "/posts"} as={'div'}>
+            <Link to='/posts'> POSTS </Link>
           </Navbar.Link> 
-        <Navbar.Link active={path === "/projects"} as={'div'}>
-            <Link to='/projects'> Projects </Link>
-          </Navbar.Link>       
+        <Navbar.Link active={path === "/categories"} as={'div'}>
+            <Link to='/categories'> CATEGORIES </Link>
+          </Navbar.Link>
+          <Navbar.Link active={path === "/about"} as={'div'}>
+            <Link to='/about'> ABOUT </Link>
+          </Navbar.Link>         
+            <Navbar.Link active={path === "/contactme"} as={'div'}>
+              <Link to='/contactme'> CONTACT ME </Link>
+            </Navbar.Link>
+            <Navbar.Link className='sm:hidden' as={'div'}>
+            <Button className='w-12 h-10' color='gray' pill onClick={() => dispatch(toggleTheme())}>
+              {theme === 'dark' ? <FaSun /> : <FaMoon />}
+            </Button>
+            </Navbar.Link>
+              
       </Navbar.Collapse>
 
     </Navbar>

@@ -10,7 +10,11 @@ export default {
     
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'BrushFont': ["brushesregular", "sans-serif"],
+      },
+    },
   },
   plugins: [
     flowbitePlugin,
