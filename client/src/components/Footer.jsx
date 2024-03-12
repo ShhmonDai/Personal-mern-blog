@@ -1,5 +1,5 @@
 import { Footer } from "flowbite-react";
-import { BsFacebook, BsInstagram, BsTwitter, BsGithub } from 'react-icons/bs';
+import { BsLinkedin, BsInstagram, BsDribbble, BsGithub, BsLaptop } from 'react-icons/bs';
 import { Link } from "react-router-dom";
 
 export default function FooterCom() {
@@ -58,9 +58,9 @@ export default function FooterCom() {
         <div className='grid w-full sm:flex justify-center sm:justify-around'>
                 <Footer.Copyright href='#' by="Szymon's blog" year={new Date().getFullYear()}/>
             <div className='flex gap-6 mt-4 sm:mt-0'>
-                <Footer.Icon href='#' icon={BsFacebook} />
+                <Footer.Icon href='#' icon={BsLinkedin} />
                 <Footer.Icon href='#' icon={BsGithub} />
-                <Footer.Icon href='#' icon={BsTwitter} />
+                <Footer.Icon href='#' icon={BsLaptop} />
                 <Footer.Icon href='#' icon={BsInstagram} />
             </div>
         </div>

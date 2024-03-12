@@ -6,8 +6,8 @@ import { toggleTheme } from "../redux/theme/themeSlice";
 import { useDispatch, useSelector } from 'react-redux';
 import { signoutSuccess } from "../redux/user/userSlice";
 import { Flowbite } from 'flowbite-react';
-import { BsFacebook, BsInstagram, BsTwitter, BsGithub } from 'react-icons/bs';
-import { HiChevronDown, HiOutlineChevronDown, HiViewGrid } from 'react-icons/hi';
+import { BsLinkedin, BsInstagram, BsLaptop, BsGithub } from 'react-icons/bs';
+import { RiComputerLine } from 'react-icons/ri';
 
 
 const customNavTheme = {
@@ -265,9 +265,9 @@ export default function Header() {
 
         {/* left side */}
         <div className='gap-4 hidden sm:flex sm:absolute left-8'>
-          <Link to='/' > <BsFacebook/> </Link>
+          <Link to='/' > <BsLinkedin/> </Link>
           <Link to='/' > <BsGithub /> </Link>
-          <Link to='/' > <BsTwitter /> </Link>
+          <Link to='/' > <RiComputerLine /> </Link>
           <Link to='/' > <BsInstagram /> </Link>
         </div>
         

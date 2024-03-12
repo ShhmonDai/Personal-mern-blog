@@ -42,7 +42,7 @@ export default function PostPage() {
     );
   
     return (
-    <main className='p-6 flex flex-col max-w-7xl mx-auto min-h-screen dark:bg-black dark:bg-opacity-30' >
+    <main className='p-6 flex flex-col max-w-7xl mx-auto min-h-screen dark:bg-black dark:bg-opacity-40' >
         <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl'>{post && post.title}</h1>
         <Link to={`search?category=${post && post.category}`} className='self-center mt-5' >
             <Button color='gray' pill size='xs'> {post && post.category} </Button>
