@@ -7,7 +7,7 @@ export default function About() {
 
           <div className='text-md flex flex-col gap-6'>
             
-          <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7 mb-4'>
+          <h1 className='text-3xl dark:text-white font font-semibold text-center my-7 '>
             About Szymon's Eclectic Anecdotes
           </h1>
             <p>
@@ -19,7 +19,7 @@ export default function About() {
               that all people involved in it's creation can feel proud of. In this blog I would like to document this entire process.
             </p>
           
-            <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7 mb-4'>
+            <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7'>
               The meaning behind the name
             </h1>
 
@@ -47,7 +47,7 @@ export default function About() {
               Anecdotes are no different than the stories told among friends, but when they’re used in literature, 
               they can accomplish more than merely passing the time. </p>
 
-            <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7 mb-4'>
+            <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7'>
               Contents
             </h1>
 
@@ -61,7 +61,7 @@ export default function About() {
               technologies, so be sure to check back often for new content!
             </p>
 
-            <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7 mb-4'>
+            <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7'>
               Leave a comment!
             </h1>
 
