@@ -4,11 +4,12 @@ export default function About() {
       <div className='max-w-7xl mx-auto pb-40 pt-10 px-10 sm:px-20 md:px-40 text-center  dark:bg-black dark:bg-opacity-40'>
         <div className='text-left text-gray-900 dark:text-gray-400'>
 
-          <h1 className='text-3xl dark:text-white font font-semibold text-center my-7'>
-            About Szymon's Eclectic Anecdotes
-          </h1>
 
           <div className='text-md flex flex-col gap-6'>
+            
+          <h1 className='text-3xl dark:text-white font font-semibold text-center mt-7 mb-4'>
+            About Szymon's Eclectic Anecdotes
+          </h1>
             <p>
               Welcome! This blog was created by Szymon Pozniewski (pronounced: Shh-mohn Poh-znieh-vski, or close enough to that)
               as a personal project to share with everyone my journey through the world of programming,

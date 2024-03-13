@@ -53,7 +53,7 @@ const customNavTheme = {
     }
     },
     "toggle": {
-      "base": "flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 sm:hidden",
+      "base": "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 sm:hidden",
       "icon": "h-5 w-5 shrink-0"
   },
   
@@ -318,7 +318,7 @@ export default function Header() {
       </div>
 
 
-      <Navbar className='border-y-[1px] h-16 sm:sticky top-0 z-10 backdrop-blur transition-all duration-500 bg-white dark:bg-[rgba(0,0,0,0.4)]'>
+      <Navbar className='border-y-[1px] sm:sticky top-0 z-10 backdrop-blur transition-all duration-500 bg-white dark:bg-[rgba(0,0,0,0.4)]'>
       
 
       {/* Navbar Elements */}
@@ -375,13 +375,14 @@ export default function Header() {
           <Navbar.Link active={path === "/about"} as={'div'}>
             <Link to='/about'> ABOUT </Link>
           </Navbar.Link>         
-            <Navbar.Link active={path === "/contactme"} as={'div'}>
-              <Link to='/contactme'> CONTACT ME </Link>
+            <Navbar.Link active={path === "/search"} as={'div'}>
+            <Link className='gap-2 items-center hidden sm:flex' to='/search'> SEARCH <AiOutlineSearch/> </Link>
+            <Link className='flex gap-2 items-center sm:hidden' to='/search'> SEARCH </Link>
             </Navbar.Link>
             <Navbar.Link className='sm:hidden' as={'div'}>
-            <Button className='w-12 h-10' color='gray' pill onClick={() => dispatch(toggleTheme())}>
-              {theme === 'dark' ? <FaSun /> : <FaMoon />}
-            </Button>
+            <div className="flex gap-2 items-center" onClick={() => dispatch(toggleTheme())}>
+              THEME: {theme === 'dark' ? <FaSun /> : <FaMoon />}
+            </div>
             </Navbar.Link>
               
       </Navbar.Collapse>

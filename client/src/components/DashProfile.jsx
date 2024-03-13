@@ -398,7 +398,7 @@ export default function DashProfile() {
                   <Modal.Header className='bg-[rgba(0,0,0,0.3)]' />
                   <Modal.Body className='bg-[rgba(0,0,0,0.3)]'>
                   <div className='text-center'>
-                      <HiOutlineExclamationCircle className='h-14 w-14 text-red-800 dark:text-red-700 mb-4 mx-auto' />
+                          <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
                       <h3 className='mb-5 text-lg text-white dark:text-white'>
                           Are you sure you want to delete your account?
                       </h3>
