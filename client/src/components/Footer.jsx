@@ -9,11 +9,9 @@ export default function FooterCom() {
 
         <div className='grid-cols-2 w-full justify-between flex'>
 
-            <div className='mt-5'>
-                <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
-                    <span className='px-2 py-1 bg-gradient-to-r from-teal-500 via-teal-500 to-blue-500 rounded-lg text-white'>Szymons</span>
-                    Blog
-                </Link>
+
+            <div className='flex items-center'>
+                <Link to='/' className='text-3xl font-BrushFont'>Szymons</Link>    
             </div>
 
             <div className='mt-3'>

@@ -273,7 +273,7 @@ export default function Header() {
         
         {/* middle */}
         <div className='w-100 flex flex-col justify-start sm:justify-center sm:text-center'>
-          <span className='text-6xl sm:text-7xl md:text-8xl sm:text-center font-BrushFont'>Szymons</span>
+          <Link to='/' className='text-6xl sm:text-7xl md:text-8xl sm:text-center font-BrushFont'>Szymons</Link>
           <span className='hidden md:inline sm:text-center italic font-semibold'>Eclectic Anecdotes</span>
         </div>
 
@@ -323,7 +323,7 @@ export default function Header() {
 
       {/* Navbar Elements */}
       <div className='flex gap-6 justify-start'>  
-      <span className='text-3xl font-BrushFont sm:hidden'>Szymons</span>
+          <Link to='/' className='text-3xl font-BrushFont sm:hidden'>Szymons</Link>
 
           <div className='flex gap-2 absolute right-5 '>
 
