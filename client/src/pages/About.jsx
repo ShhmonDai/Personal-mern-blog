@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className='min-h-screen flex justify-center'>
-      <div className='max-w-7xl mx-auto pb-40 pt-10 px-10 sm:px-20 md:px-40 text-center  dark:bg-black dark:bg-opacity-40'>
+      <div className='max-w-7xl mx-auto pb-40 pt-10 px-10 sm:px-20 md:px-40 text-center backdrop-blur-md dark:bg-black dark:bg-opacity-40'>
         <div className='text-left text-gray-900 dark:text-gray-400'>
 
 
