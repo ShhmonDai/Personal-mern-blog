@@ -7,7 +7,7 @@ export default function FooterCom() {
       <Footer container className='border-t-2 dark:border-gray-700 bg-[rgba(0,0,0,0.05)] dark:bg-[rgba(0,0,0,0.4)] transition-colors duration-500'>
     <div className='w-full max-w-7xl mx-auto'>
 
-        <div className='grid-cols-2 w-full justify-between flex'>
+        <div className='grid-cols-2 w-full justify-between flex flex-wrap'>
 
 
             <div className='flex items-center'>

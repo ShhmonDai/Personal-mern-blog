@@ -31,7 +31,7 @@ export default function Home() {
       </div>
 
       <div className='dark:bg-black dark:bg-opacity-40 border-b-[1px] border-gray-300 dark:border-gray-700 mx-auto py-10 px-5 flex flex-col items-center gap-8'>
-        <div className='text-lg md:text-2xl font-semibold'>If you are a new visitor 
+        <div className='text-lg md:text-2xl font-semibold text-center'>If you are a new visitor 
         please check out the 
         
         <Link
@@ -43,11 +43,11 @@ export default function Home() {
          page
        </div>
 
-        <div className='text-lg md:text-2xl font-semibold'>Otherwise, scroll down to see
+        <div className='text-lg md:text-2xl font-semibold text-center'>Otherwise, scroll down to see
          the most recent posts.
         </div>
 
-        <div className='text-lg md:text-2xl font-semibold'>Additionally, you can browse by blog
+        <div className='text-lg md:text-2xl font-semibold text-center'>Additionally, you can browse by blog
 
           <Link
             to={'/categories'}
@@ -76,9 +76,9 @@ export default function Home() {
       </div>
 
 
-      <div className='mx-auto px-3 pb-7 mt-16 flex flex-col gap-8'>
+      <div className='sm:mx-5 2xl:mx-40 px-3 pb-7 pt-16 flex flex-col gap-8 dark:bg-black dark:bg-opacity-40 '>
         {posts && posts.length > 0 && (
-          <div className='flex flex-col items-center gap-6'>
+          <div className='flex flex-col sm:items-center gap-6 '>
 
             <h2 className='text-2xl font-semibold text-center'>Recent Posts</h2>
 
