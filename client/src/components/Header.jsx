@@ -233,10 +233,10 @@ export default function Header() {
 
         {/* left side */}
         <div className='gap-4 hidden sm:flex sm:absolute left-8'>
-          <Link to='/' > <BsLinkedin/> </Link>
-          <Link to='/' > <BsGithub /> </Link>
-          <Link to='/' > <RiComputerLine /> </Link>
-          <Link to='/' > <BsInstagram /> </Link>
+          <Link to='https://www.linkedin.com/in/shhmon/' target='_blank' rel='noopener noreferrer' > <BsLinkedin/> </Link>
+          <Link to='https://github.com/ShhmonDai' target='_blank' rel='noopener noreferrer' > <BsGithub /> </Link>
+          <Link to='https://www.shhmon.com' target='_blank' rel='noopener noreferrer'> <RiComputerLine /> </Link>
+          <Link to='https://instagram.com/shh.mon' target='_blank' rel='noopener noreferrer'> <BsInstagram /> </Link>
         </div>
         
         {/* middle */}
@@ -342,13 +342,14 @@ export default function Header() {
           </Navbar.Link>         
         <Navbar.Link as={'div'}>
             <Dropdown label="CATEGORIES" inline>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=back-to-basics'> Back To Basics </Link></Dropdown.Item>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=web-development'> Web Development </Link></Dropdown.Item>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=artificial-intelligence'> Artificial Intelligence </Link></Dropdown.Item>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=visual-design'> Visual Design </Link></Dropdown.Item>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=personal-life'> Personal Life </Link></Dropdown.Item>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=uncategorized'> Uncategorized </Link></Dropdown.Item>
-              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category='> All Categories </Link></Dropdown.Item>
+              <Dropdown.Item as={Link} to='/search?searchTerm=&sort=desc&category=back-to-basics'> Back To Basics </Dropdown.Item>
+              <Dropdown.Item as={Link} to='/search?searchTerm=&sort=desc&category=web-development'> Web Development </Dropdown.Item>
+              <Dropdown.Item as={Link}to='/search?searchTerm=&sort=desc&category=artificial-intelligence'> Artificial Intelligence </Dropdown.Item>
+              <Dropdown.Item as={Link} to='/search?searchTerm=&sort=desc&category=visual-design'> Visual Design </Dropdown.Item>
+              <Dropdown.Item as={Link} to='/search?searchTerm=&sort=desc&category=personal-life'> Personal Life </Dropdown.Item>
+              <Dropdown.Item as={Link} to='/search?searchTerm=&sort=desc&category=uncategorized'> Uncategorized </Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item as={Link} to='/search?searchTerm=&sort=desc&category='> All Categories </Dropdown.Item>
 
             </Dropdown>
           </Navbar.Link>

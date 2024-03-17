@@ -201,6 +201,7 @@ export default function DashPosts() {
       ) : (
         <p> You have no posts yet!</p>
       )}
+
       <Modal dismissible show={showModal} onClose={() => setShowModal(false)} popup size='md' >
 
         <Modal.Header className='bg-[rgba(0,0,0,0.3)]' />
@@ -221,7 +222,22 @@ export default function DashPosts() {
           </div>
         </Modal.Body>
       </Modal>
+
+
+
+      
     </Flowbite>
+
+      {
+        currentUser.isAdmin && (
+          <Link to={'/create-post'} className='flex justify-center my-20'>
+            <Button type='button' gradientDuoTone='pinkToOrange' className='w-full'> Create a post</Button>
+          </Link>
+        )
+      }
+    
     </div>
+
+
   );
 }

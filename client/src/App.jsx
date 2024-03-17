@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
-import Categories from './pages/Categories'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Header from './components/Header'
@@ -39,7 +38,7 @@ export default function App() {
 
         <Route path="/search" element={<Search />}></Route>
         <Route path="/posts" element={<Posts />}></Route>
-        <Route path="/categories" element={<Categories />}></Route>
+ 
         <Route path="/post/:postSlug" element={<PostPage />}></Route>
       </Routes>
       <Footer/>
