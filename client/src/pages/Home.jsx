@@ -1,18 +1,29 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
+import PostCardFeatured from '../components/PostCardFeatured';
 
 export default function Home() {
 
   const [posts, setPosts] = useState([]);
+  const [postsFeatured, setPostsFeatured] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('/api/post/getPosts');
+      const res = await fetch('/api/post/getPosts?isFeatured=false');
       const data = await res.json();
       setPosts(data.posts);
     };
     fetchPosts();
+  }, []);
+
+  useEffect(() => {
+    const fetchFeaturedPosts = async () => {
+      const resFeatured = await fetch('/api/post/getPosts?isFeatured=true');
+      const dataFeatured = await resFeatured.json();
+      setPostsFeatured(dataFeatured.posts);
+    };
+    fetchFeaturedPosts();
   }, []);
 
 
@@ -77,8 +88,23 @@ export default function Home() {
 
 
       <div className='sm:mx-5 2xl:mx-40 px-3 pb-7 pt-16 flex flex-col gap-8 dark:bg-black dark:bg-opacity-40 '>
-        {posts && posts.length > 0 && (
+
+        {postsFeatured && postsFeatured.length > 0 && (
           <div className='flex flex-col sm:items-center gap-6 '>
+
+            <h2 className='text-2xl font-semibold text-center'>Featured Posts</h2>
+
+            <div className='max-w-[90rem] flex flex-wrap gap-6 justify-center'>
+              {postsFeatured.map((post) => (
+                <PostCardFeatured key={post._id} post={post} />
+              ))}
+            </div>
+
+          </div>
+        )}
+        
+        {posts && posts.length > 0 && (
+          <div className='flex flex-col sm:items-center gap-6 mt-10'>
 
             <h2 className='text-2xl font-semibold text-center'>Recent Posts</h2>
 

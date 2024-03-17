@@ -126,10 +126,16 @@ export default function UpdatePost() {
             <div className='flex flex-col gap-4 sm:flex-row justify-between'>
                 <TextInput type='text' placeholder='Title' required id='title' className='flex-1' onChange={(e) => setFormData({ ...formData, title: e.target.value })} value={formData.title} />
                 <Select onChange={(e) => setFormData({ ...formData, category: e.target.value })} value={formData.category}>
-                    <option value="uncategorized">Select a category</option>
-                    <option value="javascript">Javascript</option>
-                    <option value="reactjs">React.js</option>
-                    <option value="nextjs">Next.js</option>
+                    <option value='uncategorized'>Uncategorized</option>
+                    <option value='back-to-basics'>Back To Basics</option>
+                    <option value='web-development'>Web Development</option>
+                    <option value='artificial-intelligence'>Artificial Intelligence</option>
+                    <option value='visual-design'>Visual Design</option>
+                    <option value='personal-life'>Personal Life</option>
+                </Select>
+                <Select onChange={(e) => setFormData({ ...formData, isFeatured: e.target.value })} value={formData.isFeatured}>
+                    <option value='false'>Regular</option>
+                    <option value='true'>Featured</option>
                 </Select>
             </div>
             <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>

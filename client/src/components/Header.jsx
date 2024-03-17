@@ -197,39 +197,7 @@ const customNavTheme = {
   }, 
 };
   
-  const customDropdown = {
-    "arrowIcon": "ml-2 h-4 w-4",
-    "content": "py-1 focus:outline-none",
-    "floating": {
-      "animation": "transition-opacity",
-      "arrow": {
-        "base": "absolute z-50 h-2 w-2 rotate-45",
-        "style": {
-          "dark": "bg-gray-900 dark:bg-gray-700",
-          "light": "bg-white",
-          "auto": "bg-white dark:bg-gray-700"
-      },
-        "placement": "-4px"
-    },
-      "base": "z-50 w-fit rounded divide-y divide-gray-100 shadow focus:outline-none",
-      "content": "py-1 text-sm text-gray-700 dark:text-gray-200",
-      "divider": "my-1 h-px bg-gray-100 dark:bg-gray-600",
-      "header": "block py-2 px-4 text-sm text-gray-700 dark:text-gray-200",
-      "hidden": "invisible opacity-0",
-      "item": {
-        "container": "",
-        "base": "flex items-center justify-start py-2 px-4 text-sm text-gray-700 cursor-pointer w-full hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 focus:outline-none dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white",
-        "icon": "mr-2 h-4 w-4"
-    },
-      "style": {
-        "dark": "bg-gray-900 text-white dark:bg-gray-700",
-        "light": "border border-gray-200 bg-white text-gray-900",
-        "auto": "border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-gray-700 dark:text-white"
-    },
-      "target": "w-fit"
-  },
-    "inlineWrapper": "flex items-center"
- };
+
 
 
 
@@ -279,7 +247,7 @@ export default function Header() {
 
         {/* right side */}
         <div className='hidden sm:flex absolute right-8'>
-          <div className='flex items-start gap-2'>
+          <div className='flex items-start gap-2 z-20'>
             {/* Toggle Theme Button */}
             <Button className='w-12 h-10' color='gray' pill onClick={() => dispatch(toggleTheme())}>
               {theme === 'dark' ? <FaSun /> : <FaMoon />}
@@ -287,7 +255,7 @@ export default function Header() {
 
             {/* Sign In or Profile Dropdown */}
             {currentUser ? (
-              <Dropdown theme={customDropdown} arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" bordered color="light" rounded />}>
+              <Dropdown arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} status="online" statusPosition="top-right" bordered color="light" rounded />}>
                 <Dropdown.Header>
                   <span className='block text-sm'>@{currentUser.username}</span>
                   <span className='block text-sm font-medium truncate'>
@@ -318,7 +286,7 @@ export default function Header() {
       </div>
 
 
-      <Navbar className='border-y-[1px] sm:sticky top-0 z-10 backdrop-blur transition-all duration-500 bg-white dark:bg-[rgba(0,0,0,0.4)]'>
+      <Navbar className='border-y-[1px] sm:sticky top-0 z-10 sm:backdrop-blur transition-all duration-500 bg-white dark:bg-[rgba(0,0,0,0.4)]'>
       
 
       {/* Navbar Elements */}
@@ -329,7 +297,7 @@ export default function Header() {
 
           <div className='sm:hidden'>
           {currentUser ? (
-            <Dropdown theme={customDropdown} arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} color="light" rounded />}>
+            <Dropdown className='position:absolute'arrowIcon={false} inline label={<Avatar alt='user' img={currentUser.profilePicture} color="light" rounded />}>
               <Dropdown.Header>
                 <span className='block text-sm'>@{currentUser.username}</span>
                 <span className='block text-sm font-medium truncate'>
@@ -369,12 +337,21 @@ export default function Header() {
         <Navbar.Link active={path === "/posts"} as={'div'}>
             <Link to='/posts'> POSTS </Link>
           </Navbar.Link> 
-        <Navbar.Link active={path === "/categories"} as={'div'}>
-            <Link to='/categories'> CATEGORIES </Link>
-          </Navbar.Link>
           <Navbar.Link active={path === "/about"} as={'div'}>
             <Link to='/about'> ABOUT </Link>
           </Navbar.Link>         
+        <Navbar.Link as={'div'}>
+            <Dropdown label="CATEGORIES" inline>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=back-to-basics'> Back To Basics </Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=web-development'> Web Development </Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=artificial-intelligence'> Artificial Intelligence </Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=visual-design'> Visual Design </Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=personal-life'> Personal Life </Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category=uncategorized'> Uncategorized </Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/search?searchTerm=&sort=desc&category='> All Categories </Link></Dropdown.Item>
+
+            </Dropdown>
+          </Navbar.Link>
             <Navbar.Link active={path === "/search"} as={'div'}>
             <Link className='gap-2 items-center hidden sm:flex' to='/search'> SEARCH <AiOutlineSearch/> </Link>
             <Link className='flex gap-2 items-center sm:hidden' to='/search'> SEARCH </Link>

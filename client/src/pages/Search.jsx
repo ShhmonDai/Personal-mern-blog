@@ -11,7 +11,7 @@ export default function Search() {
     category: '',
   });
 
-  console.log(sidebarData);
+
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -35,6 +35,7 @@ export default function Search() {
 
     const fetchPosts = async () => {
       setLoading(true);
+      console.log(urlParams.toString());
       const searchQuery = urlParams.toString();
       const res = await fetch(`/api/post/getposts?${searchQuery}`);
       if (!res.ok) {
@@ -102,10 +103,10 @@ export default function Search() {
 
 
   return (
-    <div className='w-full min-h-screen flex flex-col'>
+    <div className='w-full min-h-screen flex flex-col z-0'>
 
       <div className='p-7 border-b dark:bg-black dark:bg-opacity-40 dark:border-gray-700 border-gray-200'>
-        <form className='flex flex-row justify-center gap-8' onSubmit={handleSubmit}>
+        <form className='flex flex-row flex-wrap md:flex-nowrap justify-left sm:justify-center gap-8' onSubmit={handleSubmit}>
           <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
               Search Term:
@@ -134,9 +135,11 @@ export default function Search() {
             >
               <option value=''>All</option>
               <option value='uncategorized'>Uncategorized</option>
-              <option value='reactjs'>React.js</option>
-              <option value='nextjs'>Next.js</option>
-              <option value='javascript'>JavaScript</option>
+              <option value='back-to-basics'>Back To Basics</option>
+              <option value='web-development'>Web Development</option>
+              <option value='artificial-intelligence'>Artificial Intelligence</option>
+              <option value='visual-design'>Visual Design</option>
+              <option value='personal-life'>Personal Life</option>
             </Select>
           </div>
           <Button type='submit' outline gradientDuoTone='skyToBlue'>

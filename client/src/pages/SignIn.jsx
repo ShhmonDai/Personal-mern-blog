@@ -59,7 +59,7 @@ export default function SignIn() {
   return (
     <div className='min-h-screen mt-20'>
 
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-20'>
+      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-15 lg:gap-20 md:px-14'>
         {/* left side */}
         <div className='flex-1'>
           <Link to="/" className='font-bold dark:text-white text-4xl'>

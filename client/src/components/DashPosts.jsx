@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { set } from 'mongoose';
 import { Link } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
+import { FaCheck, FaTimes } from "react-icons/fa";
 
 const customModalTheme = {
   modal: {
@@ -142,6 +143,7 @@ export default function DashPosts() {
             <Table.HeadCell>Post image</Table.HeadCell>
             <Table.HeadCell>Post title</Table.HeadCell>
             <Table.HeadCell>Category</Table.HeadCell>
+            <Table.HeadCell>Featured</Table.HeadCell>
             <Table.HeadCell>Delete</Table.HeadCell>
             <Table.HeadCell>
               <span>Edit</span>
@@ -163,6 +165,13 @@ export default function DashPosts() {
                     <Link className='font-medium text-gray-900 dark:text-white' to={`/post/${post.slug}`}>{post.title}</Link>
                   </Table.Cell>
                   <Table.Cell>{post.category}</Table.Cell>
+                 <Table.Cell>
+                   {post.isFeatured ? (
+                     <FaCheck className='text-green-500' />
+                   ) : (
+                     <FaTimes className='text-red-500' />
+                   )}
+                 </Table.Cell>
                   <Table.Cell>
                    <span className='font-medium text-red-500 hover:underline cursor-pointer' onClick={() => {
                      setShowModal(true);
