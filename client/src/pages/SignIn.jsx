@@ -59,17 +59,13 @@ export default function SignIn() {
   return (
     <div className='min-h-screen mt-20'>
 
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-15 lg:gap-20 md:px-14'>
+      <div className='flex p-3 max-w-4xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-15 lg:gap-20 md:px-14'>
         {/* left side */}
-        <div className='flex-1'>
-          <Link to="/" className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-indigo-500 to-blue-500 rounded-lg text-white'>
-              Szymons
-            </span>
-            Blog
-          </Link>
+        <div className='flex flex-col mb-10 max-w-72 '>
+          <Link to='/' className='text-6xl md:text-6xl text-center font-BrushFont'>Szymons</Link>
+          <span className='text-center italic font-semibold'>Eclectic Anecdotes</span>
           <p className='text-sm mt-5'>
-            This is a demo project. You can sign in with your email and password or with Google.
+            You can sign in with your email and password or with Google.
           </p>
         </div>
 
