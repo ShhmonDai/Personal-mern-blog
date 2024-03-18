@@ -63,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* Posts Container */}
-      <div className='sm:mx-5 2xl:mx-40 px-3 pb-7 pt-16 flex flex-col gap-8 dark:bg-black dark:bg-opacity-40 '>
+      <div className='min-h-screen sm:mx-5 2xl:mx-40 px-3 pb-7 pt-24 flex flex-col gap-8 dark:bg-black dark:bg-opacity-40 '>
         
         {/* Featured Posts */}
         {postsFeatured && postsFeatured.length > 0 && (

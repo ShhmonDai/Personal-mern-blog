@@ -40,7 +40,7 @@ export default function Posts() {
 
   return (
     <div className='w-full min-h-screen flex flex-col'>    
-          <div className='pt-10 px-5 sm:mx-5 2xl:mx-40 dark:bg-black dark:bg-opacity-40'>
+          <div className='min-h-screen pt-10 px-5 sm:mx-5 2xl:mx-40 dark:bg-black dark:bg-opacity-40'>
                   {posts && posts.length > 0 && (
                   <div className='flex flex-col sm:items-center gap-6'>
 
