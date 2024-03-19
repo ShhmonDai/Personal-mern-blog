@@ -63,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* Posts Container */}
-      <div className='min-h-screen sm:mx-5 2xl:mx-40 px-3 pb-7 pt-24 flex flex-col gap-8 dark:bg-black dark:bg-opacity-40 '>
+      <div className='min-h-screen sm:mx-5 2xl:mx-40 px-3 pb-14 pt-24 flex flex-col gap-8 dark:bg-black dark:bg-opacity-40 '>
         
         {/* Featured Posts */}
         {postsFeatured && postsFeatured.length > 0 && (
@@ -82,7 +82,7 @@ export default function Home() {
         
         {/* Recent Posts */}
         {posts && posts.length > 0 && (
-          <div className='flex flex-col sm:items-center gap-6 mt-10'>
+          <div className='flex flex-col sm:items-center gap-6 my-10'>
 
             <h2 className='text-2xl font-semibold text-center'>Recent Posts</h2>
 

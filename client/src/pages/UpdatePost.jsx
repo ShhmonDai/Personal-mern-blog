@@ -1,5 +1,5 @@
-import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
-import { useEffect, useState } from 'react';
+import { Alert, Button, FileInput, Select, TextInput, Textarea } from "flowbite-react";
+import { useEffect, useState, useRef } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { ref, getDownloadURL, getStorage, uploadBytesResumable } from 'firebase/storage';
@@ -9,6 +9,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import { Editor } from '@tinymce/tinymce-react';
 
 
 
@@ -120,6 +121,15 @@ export default function UpdatePost() {
         }
     };
 
+    const editorRef = useRef(null);
+    const log = () => {
+        if (editorRef.current) {
+            console.log(editorRef.current.getContent());
+            setFormData({ ...formData, content: editorRef.current.getContent() });
+        }
+    };
+
+
     return <div className='p-3 max-w-5xl mx-auto min-h-screen'>
         <h1 className='text-center text-3xl my-7 font-semibold'>Update Post</h1>
         <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
@@ -163,8 +173,35 @@ export default function UpdatePost() {
         )}
         */}
 
+        {/*}
             <ReactQuill modules={modules} theme="snow" placeholder="Write something..." className='h-72 mb-12' required onChange={(value) => { setFormData({ ...formData, content: value }); }} value={formData.content}/>
             <Button type='submit' gradientDuoTone='skyToBlue' > Update </Button>
+        <Textarea placeholder="Write something..." className="h-72 mb-12" required rows={4} onChange={(e) => setFormData({ ...formData, content: e.target.value })} value={formData.content} />
+        */}
+
+            <Editor
+                apiKey={import.meta.env.VITE_TINYMCE_API}
+                onInit={(evt, editor) => editorRef.current = editor}
+                initialValue={formData.content}
+                init={{
+                    height: 500,
+                    menubar: false,
+                    plugins: [
+                        'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                        'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                        'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                    ],
+                    toolbar: 'undo redo | blocks | ' +
+                        'bold italic forecolor | alignleft aligncenter ' +
+                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                        'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                }}
+                required
+            />
+            <button type='button' onClick={log}>Preview</button>
+            <Button type='submit' gradientDuoTone='skyToBlue' > Publish </Button>
+
 
             {publishError && <Alert className='mt-5' color='failure'>{publishError}</Alert>}
 
