@@ -1,28 +1,17 @@
 import { Alert, Button, FileInput, Label, Select, TextInput, Textarea } from "flowbite-react";
-import { useState, useRef } from 'react';
-
+import { useState, useRef, useEffect } from 'react';
 import {ref, getDownloadURL, getStorage, uploadBytesResumable} from 'firebase/storage';
 import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
 import { Link, useNavigate } from 'react-router-dom';
 import { Editor } from '@tinymce/tinymce-react';
-
+import Prism from "prismjs";
+import 'prismjs/themes/prism-okaidia.css';
 
 
 
 export default function CreatePost() {
-
-  const modules = {
-    toolbar: [
-      [{ 'header': [1, 2, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-      ['link', 'image'],
-      ['clean']
-    ],
-  };
 
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
@@ -37,6 +26,11 @@ export default function CreatePost() {
   const [publishError, setPublishError] = useState(null);
   
   const navigate = useNavigate();
+
+  useEffect(() => {
+    Prism.highlightAll();
+  });
+
 
   const handleUploadImage = async () => {
     try {
@@ -234,20 +228,6 @@ export default function CreatePost() {
         </Alert>
       }
 
-
-      
-      {/*
-      <ReactQuill modules={modules} theme="snow" placeholder="Write something..." className='h-72 mb-12' required onChange={(value) => {setFormData({ ...formData, content: value });}} />
-
-
-        <Button className='w-auto' type='button' gradientDuoTone='skyToBlue' onClick={(e) => setFormData({ ...formData, content: e.target.value })} value={formData.content + '<br>'} > Line Break </Button>
-        <Button className='w-auto' type='button' gradientDuoTone='skyToBlue' onClick={(e) => setFormData({ ...formData, content: e.target.value })} value={formData.content + '<h1></h1>'} > H1 </Button>
-
-      <Textarea placeholder="Write something..." className="h-72 mb-12" required rows={4} onChange={(e) => setFormData({ ...formData, content: e.target.value })} value={formData.content} /> 
-      <Button type='submit' gradientDuoTone='skyToBlue' > Publish </Button>
-      */}
-
-
       <Editor
         apiKey={import.meta.env.VITE_TINYMCE_API}
         onInit={(evt, editor) => editorRef.current = editor}
@@ -259,6 +239,18 @@ export default function CreatePost() {
             'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
             'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
             'insertdatetime', 'media', 'table', 'codesample', 'help', 'wordcount'
+          ],
+          codesample_languages: [
+            { text: 'HTML/XML', value: 'markup' },
+            { text: 'JavaScript', value: 'javascript' },
+            { text: 'CSS', value: 'css' },
+            { text: 'PHP', value: 'php' },
+            { text: 'Ruby', value: 'ruby' },
+            { text: 'Python', value: 'python' },
+            { text: 'Java', value: 'java' },
+            { text: 'C', value: 'c' },
+            { text: 'C#', value: 'csharp' },
+            { text: 'C++', value: 'cpp' }
           ],
           toolbar: 'undo redo | blocks | ' +
             'bold italic forecolor | alignleft aligncenter ' +

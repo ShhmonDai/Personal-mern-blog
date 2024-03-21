@@ -10,20 +10,13 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { Editor } from '@tinymce/tinymce-react';
 
+import Prism from "prismjs";
+import 'prismjs/themes/prism-okaidia.css';
 
 
 
 export default function UpdatePost() {
 
-    const modules = {
-        toolbar: [
-            [{ 'header': [1, 2, false] }],
-            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-            ['link', 'image'],
-            ['clean']
-        ],
-    };
 
     const [file, setFile] = useState(null);
     const [imageUploadProgress, setImageUploadProgress] = useState(null);
@@ -40,6 +33,12 @@ export default function UpdatePost() {
 
     const navigate = useNavigate();
     const { currentUser } = useSelector((state) => state.user);
+
+
+    useEffect(() => {
+        Prism.highlightAll();
+    });
+
 
     useEffect(() => {
         try {
@@ -261,17 +260,6 @@ export default function UpdatePost() {
                 </Alert>
             }
 
-            {/* 
-        {formData.image && (
-          <img src={formData.image} alt='upload' className='w-full h-72 object-cover'/>
-        )}
-        */}
-
-        {/*}
-            <ReactQuill modules={modules} theme="snow" placeholder="Write something..." className='h-72 mb-12' required onChange={(value) => { setFormData({ ...formData, content: value }); }} value={formData.content}/>
-            <Button type='submit' gradientDuoTone='skyToBlue' > Update </Button>
-        <Textarea placeholder="Write something..." className="h-72 mb-12" required rows={4} onChange={(e) => setFormData({ ...formData, content: e.target.value })} value={formData.content} />
-        */}
 
             <Editor
                 apiKey={import.meta.env.VITE_TINYMCE_API}
@@ -284,6 +272,18 @@ export default function UpdatePost() {
                         'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
                         'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
                         'insertdatetime', 'media', 'table', 'codesample', 'help', 'wordcount'
+                    ],
+                    codesample_languages: [
+                        { text: 'HTML/XML', value: 'markup' },
+                        { text: 'JavaScript', value: 'javascript' },
+                        { text: 'CSS', value: 'css' },
+                        { text: 'PHP', value: 'php' },
+                        { text: 'Ruby', value: 'ruby' },
+                        { text: 'Python', value: 'python' },
+                        { text: 'Java', value: 'java' },
+                        { text: 'C', value: 'c' },
+                        { text: 'C#', value: 'csharp' },
+                        { text: 'C++', value: 'cpp' }
                     ],
                     toolbar: 'undo redo | blocks | ' +
                         'bold italic forecolor | alignleft aligncenter ' +

@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import { Button, Spinner } from "flowbite-react";
 import CommentSection from "../components/CommentSection";
 import PostCard from "../components/PostCard";
+import Prism from "prismjs";
+import 'prismjs/themes/prism-okaidia.css';
+import "prismjs/plugins/toolbar/prism-toolbar.min.css";
+import "prismjs/plugins/toolbar/prism-toolbar.min";
+import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min";
+import "prismjs/plugins/show-language/prism-show-language.min";
 
 
 export default function PostPage() {
@@ -11,7 +17,12 @@ export default function PostPage() {
     const [error, setError] = useState(false);
     const [post, setPost] = useState(null);
     const [recentPosts, setRecentPosts] = useState(null);
-  
+
+
+    useEffect(() => {
+        Prism.highlightAll();
+    });
+
     useEffect(() => {
         const fetchPost = async () => {
             try {
@@ -27,6 +38,7 @@ export default function PostPage() {
                     setPost(data.posts[0]);
                     setLoading(false);
                     setError(false);
+                    Prism.highlightAll();
                 }
 
             } catch (error) {
@@ -58,7 +70,11 @@ export default function PostPage() {
             <Spinner size='xl'/>
         </div>
     );
+
+    
   
+
+    
     return (
     <main className='p-6 flex flex-col max-w-7xl mx-auto min-h-screen dark:bg-black dark:bg-opacity-40' >
             <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl break-all'>{post && post.title}</h1>
