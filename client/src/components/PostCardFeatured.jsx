@@ -3,7 +3,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 export default function PostCardFeatured({ post }) {
     return (
-        <div className='dark:bg-black dark:bg-opacity-20 group relative flex flex-row w-full border-2 border-orange-300 h-[120px] md:h-[150px] overflow-hidden sm:w-[500px] transition-all shadow-2xl hover:shadow-[1px_0px_25px_5px_rgb(254,215,170,1)] dark:hover:shadow-[1px_0px_25px_-5px_rgb(254,215,170,1)]'>
+        <div className='bg-white dark:bg-black dark:bg-opacity-20 group relative flex flex-row w-full border-2 border-orange-300 h-[120px] md:h-[150px] overflow-hidden sm:w-[500px] transition-all shadow-xl hover:shadow-lg hover:shadow-slate-700 dark:hover:shadow-[1px_0px_25px_-5px_rgb(254,215,170,1)]'>
             <Link className='' to={`/post/${post.slug}`}>
                 <div className='relative'>
 

@@ -229,7 +229,7 @@ export default function Header() {
     <Flowbite theme={{ theme: customNavTheme }}>
 
 
-      <div className='w-full px-8 pt-8 pb-12 sm:pb-8 hidden sm:flex sm:text-center sm:justify-center dark:bg-[rgba(0,0,0,0.4)]'>
+      <div className='w-full dark:bg-[url("/Header.png")] bg-cover px-8 pt-8 pb-12 sm:pb-8 hidden sm:flex sm:text-center sm:justify-center dark:bg-[rgba(0,0,0,0.4)]'>
 
         {/* left side */}
         <div className='gap-4 hidden sm:flex sm:absolute left-8'>

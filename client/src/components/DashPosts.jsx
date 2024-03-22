@@ -230,7 +230,7 @@ export default function DashPosts() {
 
       {
         currentUser.isAdmin && (
-          <Link to={'/create-post'} className='flex justify-center my-20'>
+          <Link to={'/create-post'} className='flex justify-center mt-5 mb-20'>
             <Button type='button' gradientDuoTone='pinkToOrange' className='w-full'> Create a post</Button>
           </Link>
         )

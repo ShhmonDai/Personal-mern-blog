@@ -3,7 +3,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 export default function PostCard({ post }) {
     return (
-        <div className='dark:bg-black dark:bg-opacity-20 group relative flex flex-row w-full border border-sky-700 h-[120px] md:h-[150px] overflow-hidden sm:w-[500px] transition-all shadow-2xl hover:shadow-lg hover:shadow-sky-800'>
+        <div className='dark:bg-black dark:bg-opacity-20 group relative flex flex-row w-full border border-sky-700 h-[120px] md:h-[150px] overflow-hidden sm:w-[500px] transition-all shadow-xl hover:shadow-lg hover:shadow-slate-700 dark:hover:shadow-sky-800'>
             <Link className='' to={`/post/${post.slug}`}>
                 <div className='relative'>
 
@@ -15,7 +15,7 @@ export default function PostCard({ post }) {
                     <span className='absolute top-0 left-0 font-semibold text-sm p-1 rounded-br bg-sky-600 text-white'>{post.category}</span>
                 </div>
             </Link>
-            <div className='p-3 flex flex-col gap-2'>
+            <Link to={`/post/${post.slug}`} className='p-3 flex flex-col gap-2'>
                 <p className='text-xs italics'>{new Date(post.updatedAt).toLocaleDateString()}</p>
                 <p className='text-sm sm:text-lg font-semibold line-clamp-2'>{post.title}</p>
                 <Link
@@ -24,7 +24,7 @@ export default function PostCard({ post }) {
                 >
                     Read more <FiArrowRight />
                 </Link>
-            </div>
+            </Link>
         </div>
     );
 }

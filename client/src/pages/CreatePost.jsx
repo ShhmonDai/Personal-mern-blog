@@ -270,7 +270,7 @@ export default function CreatePost() {
     
     <h1 className='mt-10 mb-7 text-center text-3xl font-semibold'>Preview:</h1>
     <div className='flex flex-col p-10 border dark:border-slate-800 dark:bg-black dark:bg-opacity-20 min-h-80'>  
-      <div className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl break-all' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
+      <div className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl break-words' dangerouslySetInnerHTML={{ __html: (formData.title) }}></div>
       
 
         <Button className='self-center my-5' color='gray' pill size='xs' onClick=''> {formData && formData.category} </Button>

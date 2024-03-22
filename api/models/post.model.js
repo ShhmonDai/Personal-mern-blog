@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
         },
         image: {
             type: String,
-            default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png',
+            default: 'https://firebasestorage.googleapis.com/v0/b/mern-blog-14138.appspot.com/o/1711143715962-DefaultArticle.png?alt=media&token=bd14bdd0-67b4-48ea-ae3b-06f9d80d4775.png',
         },
         category: {
             type: String,
