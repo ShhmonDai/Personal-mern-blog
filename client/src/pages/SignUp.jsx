@@ -53,10 +53,10 @@ export default function SignUp() {
  
       <div className='flex p-3 max-w-4xl mx-auto flex-col md:flex-row md:items-top sm:gap-10 md:gap-15 lg:gap-20 md:px-14'>
         {/* left side */}
-        <div className='flex flex-col mb-10 w-auto sm:max-w-72 md:-max-w-xl'>
+        <div className='flex flex-col mb-10 w-auto md:max-w-72 md:-max-w-xl'>
           <Link to='/' className='text-6xl md:text-7xl text-center font-BrushFont'>Szymons</Link>
           <span className='text-center italic font-semibold'>Eclectic Anecdotes</span>
-          <p className='text-sm mt-5'>
+          <p className='text-center md:text-left text-sm mt-5'>
             You can sign up with your email and password or with Google.
           </p>
         </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 import PostCardFeatured from '../components/PostCardFeatured';
 import { FiArrowRight } from 'react-icons/fi';
+import { Carousel } from "flowbite-react";
 
 export default function Home() {
 
@@ -32,13 +33,14 @@ export default function Home() {
     <div className='w-full min-h-screen'>
 
       {/* Homepage Banner - under the navbar image */}
-      <div className="w-full relative"> 
-        <img className='w-full' src='/BannerResized.png' alt='banner'/> 
+      <div className="w-full relative transition-all duration-300"> 
+        <img className='w-full dark:hidden' src='/BannerResized.png' alt='banner'/>
+        <img className='w-full hidden dark:inline' src='/BannerResizedNight.png' alt='banner' /> 
         <div className="absolute inset-x-0 top-5 sm:top-14 md:top-14 lg:top-16 xl:top-24 flex items-center justify-center">
           <h2 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold drop-shadow-[0_0_8px_rgba(0,0,0,1)]">Welcome to my Blog</h2>
         </div>
         <div className='hidden absolute bottom-5 left-5 sm:flex flex-col'>
-          <h2 className='text-gray-300 text-xs lg:text-md xl:text-lg font-mono'> Photo By: My loving wife</h2>
+          <h2 className='text-gray-300 text-xs lg:text-md xl:text-lg font-mono'> Original Photo By: My loving wife</h2>
           <h2 className='text-gray-300 text-xs lg:text-md xl:text-lg font-mono'> Location: Staten Island overlooking Verrazzano Bridge</h2>
         </div>
       </div>
@@ -55,8 +57,11 @@ export default function Home() {
           <Link to='/about' className='flex items-center gap-2 py-5 justify-center text-sky-700 dark:text-sky-500 hover:underline' >Learn more about me and the blog <FiArrowRight /></Link>
         </div>
 
-        <div className=' border-gray-300 dark:border-gray-700 p-5 min-w-[150px] flex justify-center items-center'>
-          <img className='w-[300px] h-auto aspect-square' src='/About.png' alt='' />
+        <div className='h-[300px] sm:w-[300px] flex justify-center items-center'>
+          <Carousel slide={false} className=''>
+            <img className='w-[300px] h-auto aspect-square' src='/About.png' alt='' />
+            <img className='w-[300px] h-auto aspect-square' src='/About2.png' alt='' />
+          </Carousel>
         </div>  
       
 
