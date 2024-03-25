@@ -84,3 +84,24 @@ body {
 .dark .post-content p {
     @apply text-gray-200;
 }
+
+.post-content pre {
+  background-color: #323f55;
+  border: 1px solid;
+  color: #e8e7e7;
+  white-space: pre-wrap;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .post-content pre {
+  background-color: #1e293b;
+  border: 1px solid;
+  border-color: #444444;
+  color: #e2e2e2;
+  white-space: pre-wrap;
+  padding:  1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
