@@ -277,7 +277,7 @@ export default function UpdatePost() {
                     codesample_languages: [
                         { text: 'HTML/XML', value: 'markup' },
                         { text: 'JavaScript', value: 'javascript' },
-                        { text: 'React JSX', value: 'reactjsx' },
+                        { text: 'React JSX', value: 'jsx' },
                         { text: 'CSS', value: 'css' },
                         { text: 'PHP', value: 'php' },
                         { text: 'Ruby', value: 'ruby' },
