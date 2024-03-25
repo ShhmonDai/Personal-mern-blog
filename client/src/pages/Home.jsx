@@ -19,9 +19,11 @@ export default function Home() {
     fetchPosts();
   }, []);
 
+  {/* Get featured posts function. Keep in mind in home page I'm reversing the list of featured posts to order them in a pyramid shape on larger screen sizes,
+      so this function sorts by oldest first */ }
   useEffect(() => {
     const fetchFeaturedPosts = async () => {
-      const resFeatured = await fetch('/api/post/getPosts?isFeatured=true');
+      const resFeatured = await fetch('/api/post/getPosts?isFeatured=true&sort=asc');
       const dataFeatured = await resFeatured.json();
       setPostsFeatured(dataFeatured.posts);
     };
