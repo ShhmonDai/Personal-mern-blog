@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
         },
         image: {
             type: String,
-            default: 'https://firebasestorage.googleapis.com/v0/b/mern-blog-14138.appspot.com/o/1711143715962-DefaultArticle.png?alt=media&token=bd14bdd0-67b4-48ea-ae3b-06f9d80d4775.png',
+            default: 'https://firebasestorage.googleapis.com/v0/b/mern-blog-14138.appspot.com/o/1711317961889-DefaultArticle.png?alt=media&token=48ab7d58-4021-442f-ae1b-042361ff4b4c',
         },
         category: {
             type: String,
