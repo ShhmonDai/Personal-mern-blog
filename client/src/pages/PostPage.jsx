@@ -9,6 +9,7 @@ import "prismjs/plugins/toolbar/prism-toolbar.min.css";
 import "prismjs/plugins/toolbar/prism-toolbar.min";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min";
 import "prismjs/plugins/show-language/prism-show-language.min";
+import 'prismjs/components/prism-jsx.min.js';
 
 
 export default function PostPage() {

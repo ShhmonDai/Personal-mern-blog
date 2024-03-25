@@ -12,6 +12,7 @@ import { Editor } from '@tinymce/tinymce-react';
 
 import Prism from "prismjs";
 import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/components/prism-jsx.min.js';
 
 
 
@@ -276,6 +277,7 @@ export default function UpdatePost() {
                     codesample_languages: [
                         { text: 'HTML/XML', value: 'markup' },
                         { text: 'JavaScript', value: 'javascript' },
+                        { text: 'React JSX', value: 'reactjsx' },
                         { text: 'CSS', value: 'css' },
                         { text: 'PHP', value: 'php' },
                         { text: 'Ruby', value: 'ruby' },
