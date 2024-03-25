@@ -288,7 +288,7 @@ export default function UpdatePost() {
                     toolbar: 'undo redo | blocks | ' +
                         'bold italic forecolor | alignleft aligncenter ' +
                         'alignright alignjustify | bullist numlist | ' +
-                        'removeformat |  codesample | link image | help',
+                        'removeformat |  codesample | link image | outdent indent | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                 }}
                 required
