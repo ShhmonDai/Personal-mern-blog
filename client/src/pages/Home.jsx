@@ -86,6 +86,11 @@ export default function Home() {
         )}
         
         {/* Recent Posts */}
+        {posts && posts.length < 1 && (
+          <div className='my-10 flex justify-center'>
+            <h1>No Posts to show</h1>
+          </div>
+        )}
         {posts && posts.length > 0 && (
           <div className='flex flex-col sm:items-center gap-6 my-10'>
 
@@ -101,7 +106,7 @@ export default function Home() {
               to={'/posts'}
               className='text-lg text-teal-500 hover:underline text-center'
             >
-              View all posts
+              View all Posts
             </Link>
           </div>
         )}

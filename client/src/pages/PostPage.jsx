@@ -88,7 +88,7 @@ export default function PostPage() {
             <span className='italic'>{post && (post.content.length / 1000).toFixed(0)} mins read</span>
         </div>
 
-        <div className='p-3 max-w-4xl mb-14 mx-auto w-full post-content break-all' dangerouslySetInnerHTML={{__html: post && post.content}}> 
+        <div className='p-3 max-w-4xl mb-14 mx-auto w-full post-content break-words' dangerouslySetInnerHTML={{__html: post && post.content}}> 
         
         </div>
 

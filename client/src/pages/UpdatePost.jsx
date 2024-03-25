@@ -316,7 +316,7 @@ export default function UpdatePost() {
                 <span>{new Date().toLocaleDateString()}</span>
                 <span className='italic'>X mins read</span>
             </div>
-            <div className='mt-10 break-all post-content' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
+            <div className='mt-10 break-words post-content' dangerouslySetInnerHTML={{ __html: (formData.content) }}></div>
         </div>
 
 
