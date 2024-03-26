@@ -20,10 +20,13 @@
 
 ![2](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/f0809ff7-e453-4d1e-9a42-f720980f4c76)
 
+![Search](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/109f1730-29a6-4c7c-9f15-2d72390c6d99)
+
+
 &nbsp;
 &nbsp;
 
-<h3 align='center'> Normal user functionality: </h3>
+<h3 align='center'> User functionality: </h3>
 
 ![3](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/0ff05fd0-dea9-43d8-904e-9685f156025a)
 
@@ -57,6 +60,19 @@ Profile picture change with visual progress circle and percentage
 
 ![7](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/ba740bf9-a145-43a3-af78-f14d5d04be53)
 
+&nbsp;
+&nbsp;
+
+<h3 align='center'> Responsive design </h3> 
+
+![Mobile](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/485e6d6a-b555-4d80-adbe-1f13fa1e44ae)
+
+![Ipad](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/59a2d5d4-a15f-4061-8839-8b2fcf384f82)
+
+![pc](https://github.com/ShhmonDai/Personal-mern-blog/assets/109430011/5791ba42-21c9-4b3c-9bb4-eebd2a3d8f06)
+
+&nbsp;
+&nbsp;
 
 
 
