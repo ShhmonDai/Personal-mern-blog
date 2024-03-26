@@ -1,10 +1,10 @@
-import { Alert, Button, FileInput, Label, Select, TextInput, Textarea } from "flowbite-react";
+import { Alert, Button, FileInput, Label, Select, TextInput} from "flowbite-react";
 import { useState, useRef, useEffect } from 'react';
 import {ref, getDownloadURL, getStorage, uploadBytesResumable} from 'firebase/storage';
 import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Editor } from '@tinymce/tinymce-react';
 import Prism from "prismjs";
 import 'prismjs/themes/prism-okaidia.css';

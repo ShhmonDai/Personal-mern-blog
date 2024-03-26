@@ -1,4 +1,4 @@
-import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
+import { Avatar, Button, Dropdown, Navbar} from "flowbite-react";
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -6,7 +6,7 @@ import { toggleTheme } from "../redux/theme/themeSlice";
 import { useDispatch, useSelector } from 'react-redux';
 import { signoutSuccess } from "../redux/user/userSlice";
 import { Flowbite } from 'flowbite-react';
-import { BsLinkedin, BsInstagram, BsLaptop, BsGithub } from 'react-icons/bs';
+import { BsLinkedin, BsInstagram, BsGithub } from 'react-icons/bs';
 import { RiComputerLine } from 'react-icons/ri';
 
 

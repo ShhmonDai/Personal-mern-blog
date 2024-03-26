@@ -1,4 +1,4 @@
-import { Alert, Button, FileInput, Label, Select, TextInput, Textarea } from "flowbite-react";
+import { Alert, Button, FileInput, Label, Select, TextInput,} from "flowbite-react";
 import { useEffect, useState, useRef } from 'react';
 
 import { ref, getDownloadURL, getStorage, uploadBytesResumable } from 'firebase/storage';
@@ -6,7 +6,7 @@ import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { Editor } from '@tinymce/tinymce-react';
 
