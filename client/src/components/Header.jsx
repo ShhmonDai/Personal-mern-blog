@@ -242,7 +242,7 @@ export default function Header() {
         {/* middle */}
         <div className='w-100 flex flex-col justify-start sm:justify-center sm:text-center'>
           <Link to='/' className='text-6xl sm:text-7xl md:text-8xl sm:text-center font-BrushFont'>Szymons</Link>
-          <span className='hidden md:inline sm:text-center italic font-semibold'>Eclectic Anecdotes</span>
+          <span className='hidden sm:inline sm:text-center italic font-semibold'>Eclectic Anecdotes</span>
         </div>
 
         {/* right side */}

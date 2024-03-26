@@ -7,9 +7,9 @@
 &nbsp;
 
 <h3 align='center'> See the live website at: 
-<a href="https://mern-blog-gdoo.onrender.com">Szymon's Eclectic Anectodes</a>
+<a href="https://shhmon.blog">Szymon's Eclectic Anectodes</a>
 </h3>
-<h4 align='center'>Hosted on Render so please give it up to a minute for the instance to load if it hasn't been used in a while</h4>
+
 
 
 &nbsp;
