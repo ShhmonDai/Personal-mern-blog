@@ -331,14 +331,14 @@ export default function Header() {
 
 
       <Navbar.Collapse>
-          <Navbar.Link active={path === "/"} as={'div'}>
-            <Link to='/'> HOME </Link>
+          <Navbar.Link active={path === "/"} as={Link} to='/'>
+            HOME
           </Navbar.Link>
-        <Navbar.Link active={path === "/posts"} as={'div'}>
-            <Link to='/posts'> POSTS </Link>
+          <Navbar.Link active={path === "/posts"} as={Link} to='/posts'>
+            POSTS
           </Navbar.Link> 
-          <Navbar.Link active={path === "/about"} as={'div'}>
-            <Link to='/about'> ABOUT </Link>
+          <Navbar.Link active={path === "/about"} as={Link} to='/about'>
+            ABOUT
           </Navbar.Link>         
         <Navbar.Link as={'div'}>
             <Dropdown label="CATEGORIES" inline>
